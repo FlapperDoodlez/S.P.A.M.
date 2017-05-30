@@ -1,0 +1,168 @@
+<html>
+
+<head>
+	<meta content="initial-scale=1.0" name="viewport">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/lodash/4.17.1/lodash.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>SP.A.M </title>
+</head>
+
+<body onload="startApp()">
+	<div id="login">
+		<div class="container">
+			<div class="app-title">SP.A.M</div>
+			<div class="app-subtitle">a Spotify tag/rating manager</div>
+			<p>
+				<button id="start" class="btn">Log in</button>
+			</p>
+		</div>
+	</div>
+	<!-- "Page" to show when logged in -->
+	<div class="view" id="loggedin">
+		<div class="page active" id="my-playlists-page">
+			<div class="page-inner">
+				<div class="content">
+					<div class="divider-title">My Playlists</div>
+
+					<div class="list detail-list top-content">
+						<ul id="playlists">
+						</ul>
+					</div>
+
+					<div class="loader-container">
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="playlist-page">
+			<div class="page-inner">
+				<div class="content">
+					<div class="divider-title" id="playlist-name">Please Select a Playlist</div>
+
+					<div class="list detail-list top-content">
+						<ul id="playlist-tracks">
+						</ul>
+					</div>
+
+					<div class="loader-container">
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="track-page">
+			<div class="page-inner">
+				<div class="content">
+					<div class="track-info top-content">
+						<div class="track-info-inner">
+							<div class="track-album">
+								<img class="track-album-image" id="track-album-image">
+							</div>
+
+							<div class="track-header">
+								<div id="track-title" class="track-title"></div>
+								<div id="track-artists" class="track-subtitle"></div>
+							</div>
+
+							<div class="tag-selector-container">
+								<div class="group-name">Tags</div>
+								<div id="tag-selector" class="tag-selector">
+								</div>
+							</div>
+							<div class="rating-selector-container">
+								<div class="group-name">Rating</div>
+								<div id="rating-selector" class="rating-selector">
+									<input type="radio" name="rating" value="1" />
+									<label for="always">1</label>
+
+									<input type="radio" name="rating" value="2" />
+									<label for="never">2</label>
+
+									<input type="radio" name="rating" value="3" />
+									<label for="change">3</label>
+									<input type="radio" name="rating" value="4" />
+									<label for="always">4</label>
+
+									<input type="radio" name="rating" value="5" />
+									<label for="never">5</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--<div class="divider-title top-content">Other songs from this album</div>
+					<div class="list select-tracks-album top-content">
+						<ul id="album-tracks">
+						</ul>
+					</div>-->
+					<div class="loader-container">
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page" id="search-page">
+			<div class="page-inner">
+				<div class="content">
+					<div class="divider-title">Search By Tag</div>
+					<div class="search-container">
+						
+					<input class="search-bar" type="text" id="search-tag">
+					<button class="btn" id="search-button">Search</button>
+					</div>
+					<br>
+					<div class="divider-title">Search By Rating</div>
+					<div class="rating-selector">
+							<input type="radio" name="rating" value="1" />
+							<label for="always">1</label>
+
+							<input type="radio" name="rating" value="2" />
+							<label for="never">2</label>
+
+							<input type="radio" name="rating" value="3" />
+							<label for="change">3</label>
+							<input type="radio" name="rating" value="4" />
+							<label for="always">4</label>
+
+							<input type="radio" name="rating" value="5" />
+							<label for="never">5</label>
+						</div>
+					<div class="divider-title">Results</div>
+					<div class="list detail-list">
+						<ul id="search-tracks">
+						</ul>
+					</div>	
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div id="tab-bar" class="tab-bar">
+		<div class="tab-bar-inner">
+			<a class="tab-link active" id="my-playlists-tab" data-page="my-playlists">
+				<i class="icon material-icons">library_music</i>
+				<span class="name">My Playlists</span>
+			</a>
+			<a class="tab-link" id="playlist-tab" data-page="playlist">
+				<i class="icon material-icons">album</i>
+				<span class="name">Playlist</span>
+			</a>
+			<a class="tab-link" id="track-tab" data-page="track">
+				<i class="icon material-icons">audiotrack</i>
+				<span class="name">Track</span>
+			</a>
+			<a class="tab-link" id="search-tab" data-page="search">
+				<i class="icon material-icons">search</i>
+				<span class="name">Search</span>
+			</a>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
